@@ -2,7 +2,7 @@
 title: "How to Teach Reproducibility in Classwork"
 subtitle: "Western Economic Association International"
 author: "Fernando Hoces, </br> Berkeley Initiative for Transparency in the Social Sciences"
-date:  "`r format(as.Date('2020-06-27'), '%d %B %Y')` | [slides](https://github.com/BITSS/ACRE/tree/master/slides) | (note: use the left and right arrow keys to navigate through slides)"
+date:  "`r format(as.Date('2020-06-27'), '%d %B %Y')` | [slides](https://github.com/BITSS/ACRE/tree/master/slides) <br> .font80[(note: use the left and right arrow keys to navigate through slides)]"
 output: 
   xaringan::moon_reader:
     footer: "These slides available at http://bit.ly/myslides"
@@ -2141,6 +2141,6 @@ Some good habits:
 
 
 
-```{r gen_pdf, include = FALSE, cache = FALSE, eval = FALSE}
+```{r gen_pdf, include = FALSE, cache = FALSE, eval = TRUE}
 pagedown::chrome_print("01_WEAI2020.html", output = "01_WEAI2020.pdf")
 ```
