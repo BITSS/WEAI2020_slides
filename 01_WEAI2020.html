@@ -1,25 +1,26 @@
----
-title: "How to Teach Reproducibility in Classwork"
-subtitle: "Western Economic Association International"
-author: "Fernando Hoces, </br> Berkeley Initiative for Transparency in the Social Sciences"
-date:  "`r format(as.Date('2020-06-27'), '%d %B %Y')` | [slides](https://github.com/BITSS/ACRE/tree/master/slides)"
-output: 
-  xaringan::moon_reader:
-    footer: "These slides available at http://bit.ly/myslides"
-    css: [default, metropolis, metropolis-fonts] 
-    lib_dir: libs
-    nature:
-      ratio: '4:3'
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-#      slideNumberFormat: |
-#          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
-editor_options: 
-  chunk_output_type: console
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>How to Teach Reproducibility in Classwork</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Fernando Hoces,  Berkeley Initiative for Transparency in the Social Sciences" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# How to Teach Reproducibility in Classwork
+## Western Economic Association International
+### Fernando Hoces, </br> Berkeley Initiative for Transparency in the Social Sciences
+### 27 June 2020 | <a href="https://github.com/BITSS/ACRE/tree/master/slides">slides</a>
+
 ---
 
-<style>
+
+&lt;style&gt;
 
 .center2 {
   margin: 0;
@@ -56,11 +57,11 @@ pre.sourceCode {
   background-color: blue;
 }
 */
-</style>
+&lt;/style&gt;
 
 
 
-```{css, echo=FALSE}
+&lt;style type="text/css"&gt;
 # CSS for including pauses in printed PDF output (see bottom of lecture)
 @media print {
   .has-continuation {
@@ -68,25 +69,10 @@ pre.sourceCode {
   }
 }
 
-```
+&lt;/style&gt;
 
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-library(knitr)
-opts_chunk$set(
-  fig.align="center",  
-  fig.height=4, #fig.width=6,
-  # out.width="748px", #out.length="520.75px",
-  dpi=300, #fig.path='Figs/',
-  cache=T ,#, 
-  echo=F #warning=F, message=F
-  )
-library(tidyverse)
-library(hrbrthemes)
-library(fontawesome)
 
-```
 
 # Today's Presentation
 
@@ -101,7 +87,7 @@ library(fontawesome)
 --
 
 .pull-right[
-</br></br></br>
+&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
 ### Target Audience:
  - Instructors of Empirical/Applied Courses in Economics (and related) PhDs   
  - Advisers of undergraduate students 
@@ -116,12 +102,12 @@ name: prologue
 # Part I: Accelerating Computational Reproducibility in Economics (ACRE)
 
 
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
 
 ---
 # Table of Contents for Part I 
 
-</br>
+&lt;/br&gt;
 .font130[
 
 1. [BITSS](#about-bitss)
@@ -136,7 +122,7 @@ name: prologue
 ---
 count: false
 # Table of Contents for Part I 
-</br>
+&lt;/br&gt;
 .font130[
 
 1. [**BITSS**](#about-bitss)
@@ -158,8 +144,8 @@ name: about-bitss
 ### [BITSS](https://bitss.org)   
 
 .pull-left[
-The Berkeley Initiative for Transparency in the Social Sciences works to improve </br>the credibility of science by </br>
-advancing transparency, </br> reproducibility,  rigor, and </br> ethics in research. 
+The Berkeley Initiative for Transparency in the Social Sciences works to improve &lt;/br&gt;the credibility of science by &lt;/br&gt;
+advancing transparency, &lt;/br&gt; reproducibility,  rigor, and &lt;/br&gt; ethics in research. 
 
 ### ACRE  
   
@@ -175,7 +161,7 @@ advancing transparency, </br> reproducibility,  rigor, and </br> ethics in resea
 ]
 .pull-right[ .right[
 We are part of the Center for Effective Global Action ([CEGA](https://cega.berkeley.edu/)).   
- </br></br></br></br></br></br></br>
+ &lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
  Edward Miguel (PI)  
 
  Emma Ng   
@@ -190,7 +176,7 @@ We are part of the Center for Effective Global Action ([CEGA](https://cega.berke
 ---
 count: false
 # Table of Contents for Part I 
-</br>
+&lt;/br&gt;
 .font130[
 
 1. [BITSS](#about-bitss)
@@ -204,14 +190,14 @@ count: false
 ---
 name: motivation
 # Motivation 1: "Reproducibility Crisis"
-</br></br>
+&lt;/br&gt;&lt;/br&gt;
 
 .font130[
-| Replication in Social Sciences<br>(same method, different sample) 	| Reproduction in Economics<br>(same data and methods) 	|
+| Replication in Social Sciences&lt;br&gt;(same method, different sample) 	| Reproduction in Economics&lt;br&gt;(same data and methods) 	|
 |-------------------------------------------------------------------	|------------------------------------------------------	|
-| OSC ([2015](https://docs.google.com/document/d/1mm_4HZnEz_2Bh8XuiS2tpqCH08MFPyqUhi1baKPqR8Y/edit#heading=h.7vqf2cziid7z)): 30%-60%                      	                          | Chang & Li ([2015](https://www.nowpublishers.com/article/Details/CFR-0053)): 43%                               	|
+| OSC ([2015](https://docs.google.com/document/d/1mm_4HZnEz_2Bh8XuiS2tpqCH08MFPyqUhi1baKPqR8Y/edit#heading=h.7vqf2cziid7z)): 30%-60%                      	                          | Chang &amp; Li ([2015](https://www.nowpublishers.com/article/Details/CFR-0053)): 43%                               	|
 | Camerer et. al. ([2016](https://science.sciencemag.org/content/351/6280/1433)): ~60%                                      	| Gertler et. al. ([2017](https://www.nature.com/articles/d41586-018-02108-9)): 14%                          	|
-| Nosek & Camerer et. al. ([2018](https://www.nature.com/articles/s41562-018-0399-z)): ~60%                              	| Kingi et. al. ([2018](https://hautahi.com/static/docs/Replication_aejae.pdf)): 43%                            	|
+| Nosek &amp; Camerer et. al. ([2018](https://www.nature.com/articles/s41562-018-0399-z)): ~60%                              	| Kingi et. al. ([2018](https://hautahi.com/static/docs/Replication_aejae.pdf)): 43%                            	|
 | Klein et. al. ([2018](https://journals.sagepub.com/doi/10.1177/2515245918810225)): 50%                                         	| Wood et. al. ([2018](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0209416#abstract0)): 25%                             	|
 ]
 ---
@@ -221,13 +207,13 @@ name: motivation
 
 
 .font120[
-    <blockquote>
+    &lt;blockquote&gt;
     Clarebout Principle:
-    </br></br>
+    &lt;/br&gt;&lt;/br&gt;
     “An article about computational science in a scientific publication is not the scholarship itself, it’s merely scholarship advertisement. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.”
-</br></br>    
-.right[  <cite> Buckheit and D.L. Donoho (1995, [2009](https://academiccommons.columbia.edu/doi/10.7916/D8QZ2MDS/download))</cite> ]
-    </blockquote>
+&lt;/br&gt;&lt;/br&gt;    
+.right[  &lt;cite&gt; Buckheit and D.L. Donoho (1995, [2009](https://academiccommons.columbia.edu/doi/10.7916/D8QZ2MDS/download))&lt;/cite&gt; ]
+    &lt;/blockquote&gt;
 ]
 
 ---
@@ -235,13 +221,13 @@ name: motivation
 # .font90[M2: More Inclusive Concept Scholarly Output]     
 
 .font120[
-    <blockquote>
+    &lt;blockquote&gt;
     Clarebout Principle:
-    </br></br>
-    “An <b>article</b> about computational science in a scientific publication is not the scholarship itself, <b>it’s merely scholarship advertisement</b>. The actual <b>scholarship is the complete software development environment and the complete set of instructions which generated the figures</b>.”
-</br></br>    
-.right[  <cite> Buckheit and D.L. Donoho (1995, [2009](https://academiccommons.columbia.edu/doi/10.7916/D8QZ2MDS/download))</cite> ]
-    </blockquote>
+    &lt;/br&gt;&lt;/br&gt;
+    “An &lt;b&gt;article&lt;/b&gt; about computational science in a scientific publication is not the scholarship itself, &lt;b&gt;it’s merely scholarship advertisement&lt;/b&gt;. The actual &lt;b&gt;scholarship is the complete software development environment and the complete set of instructions which generated the figures&lt;/b&gt;.”
+&lt;/br&gt;&lt;/br&gt;    
+.right[  &lt;cite&gt; Buckheit and D.L. Donoho (1995, [2009](https://academiccommons.columbia.edu/doi/10.7916/D8QZ2MDS/download))&lt;/cite&gt; ]
+    &lt;/blockquote&gt;
 ]
 
 ---
@@ -277,10 +263,10 @@ Every semester, graduate students around **the world** take an Empirical/Applied
 
 |       Stage       	|                         New Knowledge                        	|
 |:-----------------:	|:------------------------------------------------------------:	|
-|  </br></br> 	|                                          	|
-| </br></br>            	|  	|
-| </br></br>           	|  	|
-| </br></br>   	|  </br>          	|
+|  &lt;/br&gt;&lt;/br&gt; 	|                                          	|
+| &lt;/br&gt;&lt;/br&gt;            	|  	|
+| &lt;/br&gt;&lt;/br&gt;           	|  	|
+| &lt;/br&gt;&lt;/br&gt;   	|  &lt;/br&gt;          	|
 
 
 
@@ -296,10 +282,10 @@ Every semester, graduate students around **the world** take an Empirical/Applied
 
 |       Stage       	|                         New Knowledge                        	|
 |:-----------------:	|:------------------------------------------------------------:	|
-| Scope </br> (select and verify) 	| Data and code exist?                                         	|
-| </br></br>            	|  	|
-| </br></br>           	|  	|
-| </br></br>   	|  </br>          	|
+| Scope &lt;/br&gt; (select and verify) 	| Data and code exist?                                         	|
+| &lt;/br&gt;&lt;/br&gt;            	|  	|
+| &lt;/br&gt;&lt;/br&gt;           	|  	|
+| &lt;/br&gt;&lt;/br&gt;   	|  &lt;/br&gt;          	|
 
 ---
 count:false 
@@ -313,10 +299,10 @@ Every semester, graduate students around **the world** take an Empirical/Applied
 
 |       Stage       	|                         New Knowledge                        	|
 |:-----------------:	|:------------------------------------------------------------:	|
-| Scope </br> (select and verify) 	| Data and code exist?                                         	|
-| Assess            	| Degree of reproducibility for <br>specific part of the paper 	|
-| </br></br>           	|  	|
-| </br></br>   	|  </br>          	|
+| Scope &lt;/br&gt; (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for &lt;br&gt;specific part of the paper 	|
+| &lt;/br&gt;&lt;/br&gt;           	|  	|
+| &lt;/br&gt;&lt;/br&gt;   	|  &lt;/br&gt;          	|
 
 ---
 count:false 
@@ -330,10 +316,10 @@ Every semester, graduate students around **the world** take an Empirical/Applied
 
 |       Stage       	|                         New Knowledge                        	|
 |:-----------------:	|:------------------------------------------------------------:	|
-| Scope </br> (select and verify) 	| Data and code exist?                                         	|
-| Assess            	| Degree of reproducibility for <br>specific part of the paper 	|
-| Improve           	| E.g. fixed paths, libraries,<br>added missing files, etc.    	|
-| </br></br>   	|  </br>          	|
+| Scope &lt;/br&gt; (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for &lt;br&gt;specific part of the paper 	|
+| Improve           	| E.g. fixed paths, libraries,&lt;br&gt;added missing files, etc.    	|
+| &lt;/br&gt;&lt;/br&gt;   	|  &lt;/br&gt;          	|
 
 ---
 count:false 
@@ -344,16 +330,16 @@ Every semester, graduate students around **the world** take an Empirical/Applied
 
 |       Stage       	|                         New Knowledge                        	|
 |:-----------------:	|:------------------------------------------------------------:	|
-| Scope </br> (select and verify) 	| Data and code exist?                                         	|
-| Assess            	| Degree of reproducibility for <br>specific part of the paper 	|
-| Improve           	| E.g. fixed paths, libraries,<br>added missing files, etc.    	|
-| Test robustness   	| Results are robust to additional <br>specifications          	|
+| Scope &lt;/br&gt; (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for &lt;br&gt;specific part of the paper 	|
+| Improve           	| E.g. fixed paths, libraries,&lt;br&gt;added missing files, etc.    	|
+| Test robustness   	| Results are robust to additional &lt;br&gt;specifications          	|
 
 
 ---
 
 # M3: Prevent Loss of Knowledge  
-</br>
+&lt;/br&gt;
 .font120[
 - In each of the previous steps there was valuable new knowledge 
 - This knowledge is not usually disseminated  
@@ -367,35 +353,7 @@ Every semester, graduate students around **the world** take an Empirical/Applied
 ]
 
 
-```{r back of envelope, eval=FALSE, include=FALSE}
-# --
-# 
-# - N PhD in Economics around **the world**   
-# 
-# --
-# 
-# - Average class size 10
-# 
-# --
-# 
-# - Half takes on 2nd year elective of empirical something
-# 
-# --
-# 
-# - Each student works 20 hours on averge in a reproduction task
-# 
-# --
-# 
-# - Half of the stundents work consist on assessing the reproducibility, and/or improving the current reproducibility
-# 
-# Each year `r (100 * 10 * .5 * 20 * .5)/1000` thousand hours of knowledge generating work are unrecorded.  
-# 
 
-# ---
-# # Why conservative?  
-# 
- 
-```
 
 
 
@@ -404,7 +362,7 @@ Every semester, graduate students around **the world** take an Empirical/Applied
 count: false  
 
 # Table of Contents for Part I 
-</br>
+&lt;/br&gt;
 .font130[
 
 1. [BITSS](#about-bitss)
@@ -452,12 +410,12 @@ Reproductions can easily gravitate towards adversarial exchanges.
 ### Our approach: 
 
 We do not want to say 
- > "Paper X is (ir)reproducible"    
+ &gt; "Paper X is (ir)reproducible"    
  
   
 --
 We do want to say 
- > "Paper X's result Y has a high/low level of reproducibility according to several reproduction attempts. Moreover, improvements have been made to the original reproduction package, increasing its reproducibility to a higher level" 
+ &gt; "Paper X's result Y has a high/low level of reproducibility according to several reproduction attempts. Moreover, improvements have been made to the original reproduction package, increasing its reproducibility to a higher level" 
 
 ---
 count:false 
@@ -473,12 +431,12 @@ Reproductions can easily gravitate towards adversarial exchanges.
 ### Our approach: 
 
 We do not want to say 
- > "Paper X is (ir)reproducible"    
+ &gt; "Paper X is (ir)reproducible"    
  
   
 
 We do want to say 
- > "Paper X's result Y has a high/low **level** of reproducibility according to **several** reproduction attempts. Moreover, **improvements** have been made to the original reproduction package, **increasing** its reproducibility to a higher level" 
+ &gt; "Paper X's result Y has a high/low **level** of reproducibility according to **several** reproduction attempts. Moreover, **improvements** have been made to the original reproduction package, **increasing** its reproducibility to a higher level" 
 
   
 
@@ -493,22 +451,22 @@ background-position: 100% 0%
 
 .pull-left[
 .font100[
-Each **reproduction attempt** </br>
-is centered around scientific </br>
+Each **reproduction attempt** &lt;/br&gt;
+is centered around scientific &lt;/br&gt;
 **claims**
 
 One paper can contain  
 several claims. 
 
-Each claim may be </br>
-supported by various </br>
-**display items** (tables, </br> 
-figures & inline)
+Each claim may be &lt;/br&gt;
+supported by various &lt;/br&gt;
+**display items** (tables, &lt;/br&gt; 
+figures &amp; inline)
 
-A reproduction attempt is </br>
-at the claim level, and  </br> 
-reproducers must record  </br>
-their **specifications** of </br>
+A reproduction attempt is &lt;/br&gt;
+at the claim level, and  &lt;/br&gt; 
+reproducers must record  &lt;/br&gt;
+their **specifications** of &lt;/br&gt;
 interest.  
 ]
                                 
@@ -519,72 +477,7 @@ interest.
 .pull-right[ 
 ]
 
-```{r diagram, echo = FALSE, eval=FALSE, out.width='170%', retina=2}
-library(DiagrammeR)
 
-
-grViz("
-digraph a_nice_graph {
-
-graph [layout = neato, rankdir= TB, overlap=true]  ## layout = [neato|twopi, etc]
-#https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
-
-
-# node definitions with substituted label text
-node [fontname = Helvetica, shape = box, style=empty ]
-paper [label = '@@1']    ## label indicates the position of the letter
-
-node [fontname = Helvetica, shape = diamond, fontsize = 10, fixedsize = TRUE, fillcolor=Gray]
-claim1 [label = '@@2-1', color=red]
-claim2 [label = '@@2-2']
-claim3 [label = '@@2-3']
-
-node [fontname = Helvetica, shape = circle, fillcolor=YellowGreen, fixedsize = TRUE]
-output1 [label = '@@3-1', color = red]
-output2 [label = '@@3-2']
-output3 [label = '@@3-3']
-output4 [label = '@@3-4']
-output5 [label = '@@3-5']
-output6 [label = '@@3-6']
-
-node [fontname = Helvetica, shape = circle, fixedsize = TRUE, fillcolor=Peru]
-spec1 [label = '@@4-1', color=red]
-spec2 [label = '@@4-2']
-spec3 [label = '@@4-3']
-spec4 [label = '@@4-4']
-spec5 [label = '@@4-5']
-spec6 [label = '@@4-6']
-spec7 [label = '@@4-7']
-spec8 [label = '@@4-8']
-spec9 [label = '@@4-9']
-spec10 [label = '@@4-10']
-spec11 [label = '@@4-11']
-spec12 [label = '@@4-12']
-
-
-# edge definitions with the node IDs
-paper -> {claim1} [color=red]      ##[label = ...] adds text on the edge
-paper -> {claim2 claim3} 
-claim1 -> {output1} [color=red]
-claim1 -> {output2} 
-claim2 -> {output3 output4}
-claim3 -> {output5 output6}
-output1 -> {spec1} [color=red]
-output1 -> {spec2} 
-output2 -> {spec3 spec4}
-output3 -> {spec5 spec6}
-output4 -> {spec7 spec8}
-output5 -> {spec9 spec10}
-output6 -> {spec11 spec12}
-}
-
-[1]: 'Paper'            ## adds label to each box
-[2]: c('Claim 1', 'Claim 2', 'Claim 3')
-[3]: c('DI 1' , 'DI 2', 'DI 3', 'DI 4', 'DI 5', 'DI 6')
-[4]: paste0('S ', 1:10)
-
-")
-```
 
 
 ---
@@ -722,16 +615,16 @@ names: scoping
 
 .pull-right[
 .font90[
->**Box 1:** Summary Report Card for ACRE Paper Entry     
-> **Title:**  Sample Title   
-> **Authors:**  Jane Doe & John Doe  
-> **Original Reproduction Package Available:** URL/No  
-> [If "No"]  
->**Contacted Authors?:** Yes/No   
-> [If "Yes(contacted)"]  
-> **Type of Response:** Categories (6).  
-> **Additional Reproduction Packages:** Number (eg., 2)   
-> **Authors Available for Further Questions for ACRE Reproductions:** Yes/No/Unknown   
+&gt;**Box 1:** Summary Report Card for ACRE Paper Entry     
+&gt; **Title:**  Sample Title   
+&gt; **Authors:**  Jane Doe &amp; John Doe  
+&gt; **Original Reproduction Package Available:** URL/No  
+&gt; [If "No"]  
+&gt;**Contacted Authors?:** Yes/No   
+&gt; [If "Yes(contacted)"]  
+&gt; **Type of Response:** Categories (6).  
+&gt; **Additional Reproduction Packages:** Number (eg., 2)   
+&gt; **Authors Available for Further Questions for ACRE Reproductions:** Yes/No/Unknown   
 ]
 
 ]
@@ -744,7 +637,7 @@ background-position: 50% 20%
 
 # Assessment 
 
-</br></br></br></br></br></br></br></br>
+&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
 
 ## Two main parts for assessment: 
 
@@ -834,8 +727,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3: Partial analysis data & code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4: All analysis data & code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3: Partial analysis data &amp; code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4: All analysis data &amp; code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5: Reproducible from analysis...| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -868,8 +761,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3: Partial analysis data & code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4: All analysis data & code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3: Partial analysis data &amp; code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4: All analysis data &amp; code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5: Reproducible from analysis...| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -901,8 +794,8 @@ background-position: 0% 100%
 *     L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3: Partial analysis data & code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4: All analysis data & code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3: Partial analysis data &amp; code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4: All analysis data &amp; code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5: Reproducible from analysis...| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -934,8 +827,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
 *     L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3: Partial analysis data & code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4: All analysis data & code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3: Partial analysis data &amp; code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4: All analysis data &amp; code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5: Reproducible from analysis...| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -967,8 +860,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-*     L3: Partial analysis data & code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4: All analysis data & code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+*     L3: Partial analysis data &amp; code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4: All analysis data &amp; code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5: Reproducible from analysis...| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -1000,8 +893,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3: Partial analysis data & code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-*     L4: All analysis data & code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3: Partial analysis data &amp; code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+*     L4: All analysis data &amp; code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5: Reproducible from analysis...| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -1033,8 +926,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3: Partial analysis data & code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4: All analysis data & code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3: Partial analysis data &amp; code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4: All analysis data &amp; code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
 *     L5: Reproducible from analysis...| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -1066,8 +959,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3: Partial analysis data & code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4: All analysis data & code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3: Partial analysis data &amp; code.| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4: All analysis data &amp; code.....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5: Reproducible from analysis...| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -1099,8 +992,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3*: Partial analysis data & code| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4*: All analysis data & code....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3*: Partial analysis data &amp; code| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4*: All analysis data &amp; code....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5*: Proof of third party CRA....| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -1132,8 +1025,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-*     L3*: Partial analysis data & code| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-*     L4*: All analysis data & code....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+*     L3*: Partial analysis data &amp; code| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+*     L4*: All analysis data &amp; code....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
       L5*: Proof of third party CRA....| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -1165,8 +1058,8 @@ background-position: 0% 100%
       L1: No materials.................| -   -  | -    -  |  -  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L2: Only code ...................| ✔   ✔  | -    -  |  -  |  -    - | -   - |  -  |
-      L3*: Partial analysis data & code| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
-      L4*: All analysis data & code....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
+      L3*: Partial analysis data &amp; code| ✔   ✔  | ✔    -  |  -  |  -    - | -   - |  -  |
+      L4*: All analysis data &amp; code....| ✔   ✔  | ✔    ✔  |  -  |  -    - | -   - |  -  |
 *     L5*: Proof of third party CRA....| ✔   ✔  | ✔    ✔  |  ✔  |  -    - | -   - |  -  |
       ---------------------------------|--------|---------|-----|---------|-------|-----|
       L6: Some cleaning code...........| ✔   ✔  | ✔    ✔  |  ✔  |  ✔    - | -   - |  -  |
@@ -1184,7 +1077,7 @@ background-position: 50% 20%
 
 # Improvements 
 
-</br></br></br></br></br></br></br></br>
+&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
 
 ## Three types of improvements: 
 
@@ -1217,7 +1110,7 @@ background-size: 300px
 background-position: 0% 100% 
 
 # Improvements: Display item-level 
-</br>
+&lt;/br&gt;
 
 .font120[
 - Adding missing raw data: files or meta-data  
@@ -1240,15 +1133,15 @@ background-position: 0% 100%
 We ask reproducer to leave concise and actionable tasks for other reproducers in the future. 
 
 Example 1: 
->"Revise the .aml and .bat code scripts to reflect reorganized structure"
+&gt;"Revise the .aml and .bat code scripts to reflect reorganized structure"
 
 
 Example 2: 
-> "Provide data and codes generating the other two figures in the paper, which are not given in the replication file."
+&gt; "Provide data and codes generating the other two figures in the paper, which are not given in the replication file."
 
 
 Example 3: 
-> "Table 3 can be reproduced identically from the [...] analytic data files. I was not able to reproduce the analytic data files due to lack of access to ArcGIS software, but the code scripts and raw data files [...] are included in the reproduction package."
+&gt; "Table 3 can be reproduced identically from the [...] analytic data files. I was not able to reproduce the analytic data files due to lack of access to ArcGIS software, but the code scripts and raw data files [...] are included in the reproduction package."
 
 ---
 background-image: url(Images/robust.svg)
@@ -1258,7 +1151,7 @@ background-position: 50% 20%
 
 # Robustness Checks 
 
-</br></br></br></br></br></br></br></br>
+&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
 
 ## Two main parts for robustness: 
 
@@ -1295,40 +1188,28 @@ background-image: url(Images/robust.svg)
 background-size: 300px
 background-position: 0% 100%
 
-# Robustness & Reproducibility
+# Robustness &amp; Reproducibility
 
 .pull-left[
 Robustness with level 1
 
-```{r out.width = '70%'}
-# url
-knitr::include_graphics("Images/robustness_lvl0.svg") 
-```
+&lt;img src="Images/robustness_lvl0.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 Robustness with levels 5-9
 
-```{r out.width = '70%'}
-# url
-knitr::include_graphics("Images/robustness checks.svg") 
-```
+&lt;img src="Images/robustness checks.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ]
 
 .pull-left[
 Robustness with levels 2-4
 
-```{r out.width = '70%'}
-# url
-knitr::include_graphics("Images/robustness_lvl2_4.svg") 
-```
+&lt;img src="Images/robustness_lvl2_4.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 
 Robustness with level 10
 
-```{r out.width = '70%'}
-# url
-knitr::include_graphics("Images/robustness_lvl10.svg") 
-```
+&lt;img src="Images/robustness_lvl10.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -1352,24 +1233,24 @@ knitr::include_graphics("Images/robustness_lvl10.svg")
 # .font80[Example 1: There is no reproduction package]
 
 .font70[
->**Subject:** Reproduction package for `[“Title of the paper”]`
+&gt;**Subject:** Reproduction package for `[“Title of the paper”]`
 
->Dear Dr. `[Lastname of Corresponding Author]`,
->
-> I am contacting you to request a reproduction package for your paper titled `[Title]` which was published in `[Reference]`. A reproduction package may contain (raw and/or analytic) data, code, and other documentation that makes it possible to reproduce paper. Would you be able to share any of these items?
->
->I am a `[position]` at `[Institution]`, and I would like to reproduce the results, tables, and other figures using the reproduction materials mentioned above. I have chosen this paper because `[add context ...]`. Unfortunately, I was not able to locate any of these materials on the journal website, Dataverse `[or other data and code repositories]`, or in your website.
->
->I will record the result of my reproduction attempt on ACRE [...]. With your permission, I will also record the materials you share with me, which would allow access for other reproducers and avoid repeated requests directed to you. Please let me know if there are any legal or ethical restrictions that apply to all or parts of the reproduction materials so that I can take that into consideration during this exercise.
->
->In addition to your response above, would you be available to respond to future (non-repetitive) inquiries from me or other reproducers conducting an ACRE excercise? Though your cooperation with my and/or any future request would be extremely helpful, please note that you are *not required to comply*.
+&gt;Dear Dr. `[Lastname of Corresponding Author]`,
+&gt;
+&gt; I am contacting you to request a reproduction package for your paper titled `[Title]` which was published in `[Reference]`. A reproduction package may contain (raw and/or analytic) data, code, and other documentation that makes it possible to reproduce paper. Would you be able to share any of these items?
+&gt;
+&gt;I am a `[position]` at `[Institution]`, and I would like to reproduce the results, tables, and other figures using the reproduction materials mentioned above. I have chosen this paper because `[add context ...]`. Unfortunately, I was not able to locate any of these materials on the journal website, Dataverse `[or other data and code repositories]`, or in your website.
+&gt;
+&gt;I will record the result of my reproduction attempt on ACRE [...]. With your permission, I will also record the materials you share with me, which would allow access for other reproducers and avoid repeated requests directed to you. Please let me know if there are any legal or ethical restrictions that apply to all or parts of the reproduction materials so that I can take that into consideration during this exercise.
+&gt;
+&gt;In addition to your response above, would you be available to respond to future (non-repetitive) inquiries from me or other reproducers conducting an ACRE excercise? Though your cooperation with my and/or any future request would be extremely helpful, please note that you are *not required to comply*.
 
->Since I am required to complete this project by `[date]`, I would appreciate your response by `[deadline]`.
->
->Let me know if you have any questions. Please also feel free to contact my supervisor/instructor `[Name (email)]` for further details on this exercise. Thank you in advance for your help!
->
->Best regards,  
->`[Reproducer]`
+&gt;Since I am required to complete this project by `[date]`, I would appreciate your response by `[deadline]`.
+&gt;
+&gt;Let me know if you have any questions. Please also feel free to contact my supervisor/instructor `[Name (email)]` for further details on this exercise. Thank you in advance for your help!
+&gt;
+&gt;Best regards,  
+&gt;`[Reproducer]`
 ]
 
 ---
@@ -1378,24 +1259,24 @@ count:false
 # .font80[Example 1: There is no reproduction package]
 
 .font70[
->**Subject:** Reproduction package for `[“Title of the paper”]`
+&gt;**Subject:** Reproduction package for `[“Title of the paper”]`
 
->Dear Dr. `[Lastname of Corresponding Author]`,
->
-> I am contacting you to request a reproduction package for your paper titled `[Title]` which was published in `[Reference]`. A reproduction package may contain (raw and/or analytic) data, code, and other documentation that makes it possible to reproduce paper. Would you be able to share any of these items?
->
->I am a `[position]` at `[Institution]`, and I would like to reproduce the results, tables, and other figures using the reproduction materials mentioned above. I have chosen this paper because `[add context ...]`. **Unfortunately, I was not able to locate any of these materials on the journal website, Dataverse `[or other data and code repositories]`, or in your website**.
->
->**I will record the result of my reproduction attempt on ACRE [...]. With your permission, I will also record the materials you share with me, which would allow access for other reproducers and avoid repeated requests directed to you. Please let me know if there are any legal or ethical restrictions that apply to all or parts of the reproduction materials so that I can take that into consideration during this exercise.**
->
->In addition to your response above, would you be available to respond to future (non-repetitive) inquiries from me or other reproducers conducting an ACRE excercise? **Though your cooperation with my and/or any future request would be extremely helpful, please note that you are *not required to comply*.**
+&gt;Dear Dr. `[Lastname of Corresponding Author]`,
+&gt;
+&gt; I am contacting you to request a reproduction package for your paper titled `[Title]` which was published in `[Reference]`. A reproduction package may contain (raw and/or analytic) data, code, and other documentation that makes it possible to reproduce paper. Would you be able to share any of these items?
+&gt;
+&gt;I am a `[position]` at `[Institution]`, and I would like to reproduce the results, tables, and other figures using the reproduction materials mentioned above. I have chosen this paper because `[add context ...]`. **Unfortunately, I was not able to locate any of these materials on the journal website, Dataverse `[or other data and code repositories]`, or in your website**.
+&gt;
+&gt;**I will record the result of my reproduction attempt on ACRE [...]. With your permission, I will also record the materials you share with me, which would allow access for other reproducers and avoid repeated requests directed to you. Please let me know if there are any legal or ethical restrictions that apply to all or parts of the reproduction materials so that I can take that into consideration during this exercise.**
+&gt;
+&gt;In addition to your response above, would you be available to respond to future (non-repetitive) inquiries from me or other reproducers conducting an ACRE excercise? **Though your cooperation with my and/or any future request would be extremely helpful, please note that you are *not required to comply*.**
 
->Since I am required to complete this project by `[date]`, I would appreciate your response by `[deadline]`.
->
->Let me know if you have any questions. Please also feel free to contact my supervisor/instructor `[Name (email)]` for further details on this exercise. Thank you in advance for your help!
->
->Best regards,  
->`[Reproducer]`
+&gt;Since I am required to complete this project by `[date]`, I would appreciate your response by `[deadline]`.
+&gt;
+&gt;Let me know if you have any questions. Please also feel free to contact my supervisor/instructor `[Name (email)]` for further details on this exercise. Thank you in advance for your help!
+&gt;
+&gt;Best regards,  
+&gt;`[Reproducer]`
 ]
 
 ---
@@ -1404,18 +1285,18 @@ count:false
 
 **Template email:**  
 
->**Subject:** Clarification for reproduction materials for `[“Title of the paper”]`  
+&gt;**Subject:** Clarification for reproduction materials for `[“Title of the paper”]`  
 
->Dear Dr. `[Lastname of Corresponding Author]`,
->
->Thank you for sharing the materials. They have been immensely helpful for my work.
->
->Unfortunately, I ran into a few issues as I delved into the reproduction exercise, and I think your guidance would be helpful in resolving them. `[Describe the issues and how you have tried to resolve them. Describe whatever files or parts of the data or code are missing. Refer to examples 1 and 2 below for more details]`.  
->  
->Thank you in advance for your help.
->  
->Best regards,  
->`[Reproducer]`  
+&gt;Dear Dr. `[Lastname of Corresponding Author]`,
+&gt;
+&gt;Thank you for sharing the materials. They have been immensely helpful for my work.
+&gt;
+&gt;Unfortunately, I ran into a few issues as I delved into the reproduction exercise, and I think your guidance would be helpful in resolving them. `[Describe the issues and how you have tried to resolve them. Describe whatever files or parts of the data or code are missing. Refer to examples 1 and 2 below for more details]`.  
+&gt;  
+&gt;Thank you in advance for your help.
+&gt;  
+&gt;Best regards,  
+&gt;`[Reproducer]`  
 
 ---
 count:false
@@ -1423,18 +1304,18 @@ count:false
 
 **Template email:**  
 
->**Subject:** Clarification for reproduction materials for `[“Title of the paper”]`  
+&gt;**Subject:** Clarification for reproduction materials for `[“Title of the paper”]`  
 
->Dear Dr. `[Lastname of Corresponding Author]`,
->
->Thank you for sharing the materials. They have been immensely helpful for my work.
->
->Unfortunately, I ran into a few issues as I delved into the reproduction exercise, and I think your guidance would be helpful in resolving them. **`[Describe the issues and how you have tried to resolve them. Describe whatever files or parts of the data or code are missing. Refer to examples 1 and 2 below for more details]`**.  
->  
->Thank you in advance for your help.
->  
->Best regards,  
->`[Reproducer]`  
+&gt;Dear Dr. `[Lastname of Corresponding Author]`,
+&gt;
+&gt;Thank you for sharing the materials. They have been immensely helpful for my work.
+&gt;
+&gt;Unfortunately, I ran into a few issues as I delved into the reproduction exercise, and I think your guidance would be helpful in resolving them. **`[Describe the issues and how you have tried to resolve them. Describe whatever files or parts of the data or code are missing. Refer to examples 1 and 2 below for more details]`**.  
+&gt;  
+&gt;Thank you in advance for your help.
+&gt;  
+&gt;Best regards,  
+&gt;`[Reproducer]`  
 
 
 ---
@@ -1442,7 +1323,7 @@ count:false
 # An example of well described issues:
 
 .font80[
->Specifically, I am attempting to reproduce OUTPUT X (e.g., table 1, figure 3). I found that the following components are required to reproduce to reproduce OUTPUT X:     
+&gt;Specifically, I am attempting to reproduce OUTPUT X (e.g., table 1, figure 3). I found that the following components are required to reproduce to reproduce OUTPUT X:     
 
 ```md
          OUTPUT X
@@ -1459,9 +1340,9 @@ count:false
                               └───[data] admin_01raw.csv* 
 ```
 
->I have marked with an asterisk (\*) the items that I could not find in the reproduction materials: data_cleaning01.R and admin_01raw.csv. After accessing these files, I will also be able to identify the name of the raw data set required to obtain output1_part1.txt. This is to let you know that I may need to contact you again if I cannot find this file (labeled as UNKNOWN above) in the reproduction materials.
->
->I understand that this request will require some work for you or somebody in your research group, but I want to assure you that I will add these missing files to the reproduction package for your paper on the ACRE platform. Doing this will ensure that you will not be asked twice for the same missing file.
+&gt;I have marked with an asterisk (\*) the items that I could not find in the reproduction materials: data_cleaning01.R and admin_01raw.csv. After accessing these files, I will also be able to identify the name of the raw data set required to obtain output1_part1.txt. This is to let you know that I may need to contact you again if I cannot find this file (labeled as UNKNOWN above) in the reproduction materials.
+&gt;
+&gt;I understand that this request will require some work for you or somebody in your research group, but I want to assure you that I will add these missing files to the reproduction package for your paper on the ACRE platform. Doing this will ensure that you will not be asked twice for the same missing file.
 ]
 
 ---
@@ -1470,7 +1351,7 @@ count:false
 # An example of well described issues:
 
 .font80[
->Specifically, I am attempting to reproduce OUTPUT X (e.g., table 1, figure 3). I found that the following components are required to reproduce to reproduce OUTPUT X:     
+&gt;Specifically, I am attempting to reproduce OUTPUT X (e.g., table 1, figure 3). I found that the following components are required to reproduce to reproduce OUTPUT X:     
 
 ```md
          OUTPUT X
@@ -1487,9 +1368,9 @@ count:false
 *                             └───[data] admin_01raw.csv* 
 ```
 
->I have marked with an asterisk (\*) the items that I could not find in the reproduction materials: **data_cleaning01.R** and **admin_01raw.csv**. After accessing these files, I will also be able to identify the name of the raw data set required to obtain output1_part1.txt. This is to let you know that I may need to contact you again if I cannot find this file (labeled as **UNKNOWN** above) in the reproduction materials.
->
->I understand that this request will require some work for you or somebody in your research group, but I want to assure you that I will add these missing files to the reproduction package for your paper on the ACRE platform. **Doing this will ensure that you will not be asked twice for the same missing file.**
+&gt;I have marked with an asterisk (\*) the items that I could not find in the reproduction materials: **data_cleaning01.R** and **admin_01raw.csv**. After accessing these files, I will also be able to identify the name of the raw data set required to obtain output1_part1.txt. This is to let you know that I may need to contact you again if I cannot find this file (labeled as **UNKNOWN** above) in the reproduction materials.
+&gt;
+&gt;I understand that this request will require some work for you or somebody in your research group, but I want to assure you that I will add these missing files to the reproduction package for your paper on the ACRE platform. **Doing this will ensure that you will not be asked twice for the same missing file.**
 ]
 
 ---
@@ -1518,37 +1399,37 @@ count:false
 
 # Easy to grade: report 1 
 
-<object data="Images/03_report_card_PS1.pdf" type="application/pdf" width="850px" height="500px">
-    <embed src="Images/03_report_card_PS1.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="Images/03_report_card_PS1.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+&lt;object data="Images/03_report_card_PS1.pdf" type="application/pdf" width="850px" height="500px"&gt;
+    &lt;embed src="Images/03_report_card_PS1.pdf"&gt;
+        &lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href="Images/03_report_card_PS1.pdf"&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+    &lt;/embed&gt;
+&lt;/object&gt;
 
 ---
 
 # Easy to grade: report 1 
 .pull-left[
-<object data="Images/03_report_card_PS1.pdf" type="application/pdf" width="400px" height="500px">
-    <embed src="Images/03_report_card_PS1.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="Images/03_report_card_PS1.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+&lt;object data="Images/03_report_card_PS1.pdf" type="application/pdf" width="400px" height="500px"&gt;
+    &lt;embed src="Images/03_report_card_PS1.pdf"&gt;
+        &lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href="Images/03_report_card_PS1.pdf"&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+    &lt;/embed&gt;
+&lt;/object&gt;
 ]
 
 .pull-left[
-<object data="Images/sample_paper.pdf" type="application/pdf" width="400px" height="500px">
-    <embed src="Images/sample_paper.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="Images/sample_paper.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+&lt;object data="Images/sample_paper.pdf" type="application/pdf" width="400px" height="500px"&gt;
+    &lt;embed src="Images/sample_paper.pdf"&gt;
+        &lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href="Images/sample_paper.pdf"&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+    &lt;/embed&gt;
+&lt;/object&gt;
 ]
 
 
 ---
 # .font80[Suggested timelines for different formats]
 
-</br></br>
-<style type="text/css">
+&lt;/br&gt;&lt;/br&gt;
+&lt;style type="text/css"&gt;
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:18px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:18px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -1557,56 +1438,56 @@ count:false
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 .tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-  <tr>
-    <th class="tg-0pky"></th>
-    <th class="tg-c3ow" colspan="2">2 weeks <br> (~10 days)</th>
-    <th class="tg-c3ow" colspan="2">1 month <br> (~20 days)</th>
-    <th class="tg-c3ow" colspan="2">1 semester <br> (~100 days)</th>
-  </tr>
-  <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky">analysis data</td>
-    <td class="tg-0pky">raw data</td>
-    <td class="tg-0pky">analysis data</td>
-    <td class="tg-0pky">raw data</td>
-    <td class="tg-0pky">analysis data</td>
-    <td class="tg-0pky">raw data</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Scoping</td>
-    <td class="tg-c3ow" colspan="2">10% (1 day)</td>
-    <td class="tg-c3ow" colspan="2">5% (1 day)</td>
-    <td class="tg-c3ow" colspan="2">5% (5 days)</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Assessment</td>
-    <td class="tg-c3ow" colspan="2">35%</td>
-    <td class="tg-c3ow" colspan="2">25%</td>
-    <td class="tg-c3ow" colspan="2">15%</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Improvement</td>
-    <td class="tg-c3ow">25%</td>
-    <td class="tg-c3ow">0%</td>
-    <td class="tg-c3ow" colspan="2">40%</td>
-    <td class="tg-c3ow">20%</td>
-    <td class="tg-c3ow">30%</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Robustness</td>
-    <td class="tg-c3ow">25%</td>
-    <td class="tg-c3ow">5%</td>
-    <td class="tg-c3ow" colspan="2">25%</td>
-    <td class="tg-c3ow" colspan="2">25%</td>
-  </tr>
-</table>
+&lt;/style&gt;
+&lt;table class="tg"&gt;
+  &lt;tr&gt;
+    &lt;th class="tg-0pky"&gt;&lt;/th&gt;
+    &lt;th class="tg-c3ow" colspan="2"&gt;2 weeks &lt;br&gt; (~10 days)&lt;/th&gt;
+    &lt;th class="tg-c3ow" colspan="2"&gt;1 month &lt;br&gt; (~20 days)&lt;/th&gt;
+    &lt;th class="tg-c3ow" colspan="2"&gt;1 semester &lt;br&gt; (~100 days)&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0pky"&gt;&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;analysis data&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;raw data&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;analysis data&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;raw data&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;analysis data&lt;/td&gt;
+    &lt;td class="tg-0pky"&gt;raw data&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0pky"&gt;Scoping&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;10% (1 day)&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;5% (1 day)&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;5% (5 days)&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0pky"&gt;Assessment&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;35%&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;25%&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;15%&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0pky"&gt;Improvement&lt;/td&gt;
+    &lt;td class="tg-c3ow"&gt;25%&lt;/td&gt;
+    &lt;td class="tg-c3ow"&gt;0%&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;40%&lt;/td&gt;
+    &lt;td class="tg-c3ow"&gt;20%&lt;/td&gt;
+    &lt;td class="tg-c3ow"&gt;30%&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="tg-0pky"&gt;Robustness&lt;/td&gt;
+    &lt;td class="tg-c3ow"&gt;25%&lt;/td&gt;
+    &lt;td class="tg-c3ow"&gt;5%&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;25%&lt;/td&gt;
+    &lt;td class="tg-c3ow" colspan="2"&gt;25%&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 
 ---
 count: false
 # Table of Contents for Part I 
-</br>
+&lt;/br&gt;
 .font130[
 
 1. [BITSS](#about-bitss)
@@ -1649,9 +1530,7 @@ background-size: contain
 
 You can check the ACRE Guidelines, and also contribute if you want: https://bitss.github.io/ACRE/
 
-```{r eval = TRUE, echo=FALSE}
-knitr::include_url("https://bitss.github.io/ACRE/", height = "350px")
-```
+&lt;iframe src="https://bitss.github.io/ACRE/" width="100%" height="350px"&gt;&lt;/iframe&gt;
 
 .center[
 A beta version of the platform will be online by early September. 
@@ -1697,7 +1576,7 @@ class: center, middle
 
 .font180[**Acknowledgements**]  
 
-</br>
+&lt;/br&gt;
 
 --
 
@@ -1746,11 +1625,11 @@ name: part2
 # Part II: Hands-on Tutorial
 
 
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
 
 ---
 # Table of Contents of Part II 
-</br>
+&lt;/br&gt;
 .font130[
 
 1. [A Short Tutorial on Git/Github](#r4ds)
@@ -1889,9 +1768,9 @@ background-image: url("Images/git.png")
 background-size: contain
 
 # Managing expectations
-<!--
+&lt;!--
 talk about undo here
--->
+--&gt;
 ---
 # Demos
 
@@ -1952,10 +1831,7 @@ talk about undo here
 ---
 # Fatal Error!
 
-```{r out.width = '50%', echo=FALSE}
-# url
-knitr::include_graphics("Images/error_image.png") 
-```
+&lt;img src="Images/error_image.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -1984,7 +1860,7 @@ background-size: contain
 3 - Save, commit and push.   
 4 - Create your first **pull request**.   
 5 - Let's see if I can manage all those pull requests very quickly (maybe illustrate issues).   
-6 - Now find your neighbors repo of Demos 1 & 2, fork it, clone it, make a change, save, commit, and...
+6 - Now find your neighbors repo of Demos 1 &amp; 2, fork it, clone it, make a change, save, commit, and...
  
 
 ---
@@ -2011,7 +1887,7 @@ background-size: contain
 ---
 # Demo #4: Many owners
     
-1. Half of you (\#1): go back to the repo of demo 1 & 2 and invite a collaborator.  
+1. Half of you (\#1): go back to the repo of demo 1 &amp; 2 and invite a collaborator.  
 (Suggestion: the "forker" creates the repo, the "forkee" is invited  
 , edit, commit, push/pull)  
 --
@@ -2022,7 +1898,7 @@ background-size: contain
 3. \#1 commits and pushes in **different lines**.    
 --
 
-4. Switch and repeat 2 & 3: \#2 commits first and pushes, then \#1.    
+4. Switch and repeat 2 &amp; 3: \#2 commits first and pushes, then \#1.    
 --
 
 5. Repeat 2 - 4 but now both of you in the same lines.    
@@ -2076,7 +1952,7 @@ background-size: contain
 ---
 # Now go and explore!
 Some good habits:   
-- Commit often (<1hr)  
+- Commit often (&lt;1hr)  
 - Always pull before you start a new session of work. Also good to pull before pushing.    
 - Think of your remote as the most important set of files. Get used to deleting things in your local machine.    
 
@@ -2096,7 +1972,7 @@ Some good habits:
 
 
 ---
-# .font80[Economists Doing Highly Reproducible Work<sup>1</sup>] 
+# .font80[Economists Doing Highly Reproducible Work&lt;sup&gt;1&lt;/sup&gt;] 
 
 .pull-left[
 
@@ -2129,18 +2005,135 @@ Some good habits:
 - [Opportunity Lab](https://github.com/Opportunitylab)
 - [Congressional Budget Office](https://github.com/US-CBO)
 - [Policy Simulation Library](https://github.com/PSLmodels)
-- [Gentzkow & Shapiro Lab](https://github.com/gslab-econ)
+- [Gentzkow &amp; Shapiro Lab](https://github.com/gslab-econ)
 - [Urban Institute](https://github.com/UrbanInstitute)
 ]
 
-</br></br>
+&lt;/br&gt;&lt;/br&gt;
 .footnote[
 [1]: Non-exhaustive list of people and organizations doing amazing reproducible work on github (other than us!)
 ]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "4:3",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
 
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
 
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
-
-```{r gen_pdf, include = FALSE, cache = FALSE, eval = FALSE}
-pagedown::chrome_print("01_WEAI2020.html", output = "01_WEAI2020.pdf")
-```
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
